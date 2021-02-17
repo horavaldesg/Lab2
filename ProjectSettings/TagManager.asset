@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - BlockEnemy
   - SwordEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

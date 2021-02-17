@@ -15,12 +15,21 @@ public class CollisionDetecter : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Player");
+
+            HealthBarEnemy.enemyHit(0.1f);
+            Debug.Log("Enemy Hit");
+            
         }
-        Debug.Log("Ground");
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            HealthBar.PlayerHit(0.1f);
+            Debug.Log("Player Hit");
+        }
     }
+
 }
