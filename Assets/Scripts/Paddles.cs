@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Paddles : MonoBehaviour
 {
+    bool move = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,21 +14,24 @@ public class Paddles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        returnPaddle(30);
     }
     public void LeftPaddle()
     {
-        transform.Rotate(0, 0, 30);
-        returnPaddle();
+
+        move = true;
     }
     public void RightPaddle()
     {
-        transform.Rotate(0, 0, -30);
-        returnPaddle();
+        
+        returnPaddle(-30);
     }
-    IEnumerator returnPaddle()
+    IEnumerator returnPaddle(int z)
     {
-        yield return new WaitForSeconds(0.5f);
+        transform.Rotate(0, 0, z);
+        yield return new WaitForSeconds(1);
         transform.Rotate(0, 0, 0);
+       
     }
+
 }
