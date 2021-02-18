@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour
 {
     Animator anim;
@@ -24,7 +24,7 @@ public class Controller : MonoBehaviour
         transform.position += new Vector3(speed * Time.deltaTime, 0,0);
         if (!isAlive)
         {
-            anim.Play("Death");
+            StartCoroutine(DeathSequence());
         }
        
 
@@ -87,6 +87,12 @@ public class Controller : MonoBehaviour
 
 
     }
-   
+    IEnumerator DeathSequence()
+    {
+        anim.Play("Death");
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Title");
+    }
+
 
 }
