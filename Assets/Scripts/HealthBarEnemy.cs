@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class HealthBarEnemy : MonoBehaviour
 {
     public static RectTransform rect;
@@ -18,6 +19,7 @@ public class HealthBarEnemy : MonoBehaviour
         if(rect.localScale.x <= 0)
         {
             rect.localScale = new Vector3(0, 1, 1);
+            SceneManager.LoadScene("Title");
 
         }
     }
