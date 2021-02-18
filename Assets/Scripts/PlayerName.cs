@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerSpawner : MonoBehaviour
+using TMPro;
+public class PlayerName : MonoBehaviour
 {
-    public static GameObject player;
-    
+    public static string playerName;
+    TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-       
-        
-        Instantiate(player);
+        text = GetComponent<TextMeshProUGUI>();
+        text.SetText(playerName);
+        Debug.Log(playerName);
     }
 
     // Update is called once per frame

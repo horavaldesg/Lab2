@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class CharacterSelect : MonoBehaviour
 {
     public GameObject brute;
     public GameObject maria;
+    public TMP_InputField inp;
+    string inpText;
+    //public string playerName;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,6 +30,7 @@ public class CharacterSelect : MonoBehaviour
     {
 
         PlayerSpawner.player = brute;
+        PlayerName.playerName = inpText;
         Debug.Log("Character Selected" );
     }
 
@@ -33,6 +38,11 @@ public class CharacterSelect : MonoBehaviour
     {
 
         PlayerSpawner.player = maria;
+        PlayerName.playerName = inpText;
         Debug.Log("Character Selected");
+    }
+    public void SavaInput()
+    {
+        inpText = inp.text;
     }
 }
