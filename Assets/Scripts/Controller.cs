@@ -28,6 +28,7 @@ public class Controller : MonoBehaviour
     {
         anim.SetBool("Walk", true);
         speed = givenSpeed;
+        //EnemyController.move();
 
     }
     public void StopWalk()

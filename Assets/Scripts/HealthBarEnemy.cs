@@ -19,6 +19,7 @@ public class HealthBarEnemy : MonoBehaviour
         if(rect.localScale.x <= 0)
         {
             rect.localScale = new Vector3(0, 1, 1);
+            EnemyController.enemyIsAlive = false;
             SceneManager.LoadScene("Title");
 
         }

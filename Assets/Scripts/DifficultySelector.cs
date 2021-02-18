@@ -43,14 +43,17 @@ public class DifficultySelector : MonoBehaviour
     {
         if(imgColor.color == Color.green)
         {
+            EnemyController.EasyEnemy();
             SceneManager.LoadScene("Easy");
         }
         else if (imgColor.color == Color.yellow)
         {
+            EnemyController.MediumEnemy();
             SceneManager.LoadScene("Medium");
         }
         else if (imgColor.color == Color.red)
         {
+            EnemyController.HardEnemy();
             SceneManager.LoadScene("Hard");
         }
     }
