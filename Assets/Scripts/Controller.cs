@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     public GameObject BlockShield;
     public GameObject swordPlayer;
     [SerializeField] private float givenSpeed;
+    public static bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,10 @@ public class Controller : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(speed * Time.deltaTime, 0,0);
+        if (!isAlive)
+        {
+            anim.Play("Death");
+        }
        
 
     }

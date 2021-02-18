@@ -20,7 +20,7 @@ public class HealthBarEnemy : MonoBehaviour
         {
             rect.localScale = new Vector3(0, 1, 1);
             EnemyController.enemyIsAlive = false;
-            SceneManager.LoadScene("Title");
+            //SceneManager.LoadScene("Title");
 
         }
     }

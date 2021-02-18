@@ -21,6 +21,7 @@ public class CollisionDetecter : MonoBehaviour
         {
 
             HealthBarEnemy.enemyHit(0.1f);
+            
             Debug.Log("Enemy Hit");
             
         }

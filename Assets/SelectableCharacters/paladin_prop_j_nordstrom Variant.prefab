@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 3952206136028379237}
   - component: {fileID: 6758563636265346081}
   - component: {fileID: 8902074474472852602}
+  - component: {fileID: 1893771107826804766}
   m_Layer: 8
   m_Name: SwordEnemy
   m_TagString: SwordEnemy
@@ -275,6 +276,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1893771107826804766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679204081298512186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a30576e7856841f88923777b0b92ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2469286899631217942
 PrefabInstance:
   m_ObjectHideFlags: 0

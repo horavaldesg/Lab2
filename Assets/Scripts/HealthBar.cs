@@ -18,6 +18,7 @@ public class HealthBar : MonoBehaviour
         if (rect.localScale.x <= 0)
         {
             rect.localScale = new Vector3(0, 1, 1);
+            Controller.isAlive = false;
 
         }
     }
