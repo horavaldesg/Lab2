@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class DifficultySelector : MonoBehaviour
 {
     public int color = 0;
     public static Image imgColor;
+    public static TextMeshProUGUI difficultyText;
+    public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +19,21 @@ public class DifficultySelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        difficultyText = text;
     }
-    public static void WhichScene(float slider, Image imgColor)
+    public static void WhichScene(float slider, Image imgColor, TextMeshProUGUI text)
     {
         switch (slider)
         {
             case 1: imgColor.color = Color.green;
+                text.GetComponent<TextMeshProUGUI>().SetText("Easy");
+                    
                 break;
             case 2: imgColor.color = Color.yellow;
+                text.GetComponent<TextMeshProUGUI>().SetText("Medium");
                 break;
             case 3: imgColor.color = Color.red;
+                text.GetComponent<TextMeshProUGUI>().SetText("Hard");
                 break;
         }
 

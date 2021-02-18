@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class DifficultySlider : MonoBehaviour
 {
     Slider slider;
@@ -14,6 +15,6 @@ public class DifficultySlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DifficultySelector.WhichScene(slider.value, DifficultySelector.imgColor);
+        DifficultySelector.WhichScene(slider.value, DifficultySelector.imgColor, DifficultySelector.difficultyText.GetComponent<TextMeshProUGUI>());
     }
 }
