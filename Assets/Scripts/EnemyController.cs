@@ -148,7 +148,6 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator Slash()
     {
-        
         anim.SetBool("Slash", true);
         yield return new WaitForSeconds(2);
         anim.SetBool("Slash", false);
