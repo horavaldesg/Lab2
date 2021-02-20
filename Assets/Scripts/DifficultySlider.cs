@@ -15,6 +15,7 @@ public class DifficultySlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DifficultySelector.WhichScene(slider.value, DifficultySelector.imgColor, DifficultySelector.difficultyText.GetComponent<TextMeshProUGUI>());
+        float value = slider.value;
+        DifficultySelector.WhichScene(value, DifficultySelector.imgColor.GetComponent<Image>(), DifficultySelector.difficultyText.GetComponent<TextMeshProUGUI>());
     }
 }

@@ -43,18 +43,26 @@ public class DifficultySelector : MonoBehaviour
     {
         if(imgColor.color == Color.green)
         {
+            PlayerPrefs.SetString("PlayerName", CharacterSelect.inpText);
             EnemyController.EasyEnemy();
             SceneManager.LoadScene("Easy");
         }
         else if (imgColor.color == Color.yellow)
         {
+            PlayerPrefs.SetString("PlayerName", CharacterSelect.inpText);
             EnemyController.MediumEnemy();
             SceneManager.LoadScene("Medium");
         }
         else if (imgColor.color == Color.red)
         {
+            PlayerPrefs.SetString("PlayerName", CharacterSelect.inpText);
             EnemyController.HardEnemy();
             SceneManager.LoadScene("Hard");
         }
+    }
+
+    public void TitleScreen()
+    {
+        SceneManager.LoadScene("Title");
     }
 }

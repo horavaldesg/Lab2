@@ -11,10 +11,18 @@ public class EnemyController : MonoBehaviour
     public static bool easy;
     public static bool medium;
     public static bool hard;
+
+    public static bool PlayerSlash;
+    public static bool PlayerBlock;
+
+    public static bool PlayerMoveRight;
+    public static bool PlayerMoveLeft;
+
     public GameObject blockObject;
     // Start is called before the first frame update
     void Start()
     {
+        enemyIsAlive = true;
         anim = GetComponent<Animator>();
     }
 
@@ -27,34 +35,76 @@ public class EnemyController : MonoBehaviour
             
             StartCoroutine(DeathSequence());
         }
-        if(anim.GetBool("Block") == true)
-        {
-            blockObject.SetActive(false);
-            Debug.Log("Block");
-        }
-        else if(anim.GetBool("Block") == false)
-        {
-            blockObject.SetActive(true);
-        }
+       
         if (easy)
         {
-            StartCoroutine(EasyMove());
+            if (PlayerSlash)
+            {
+
+                StartCoroutine(Block());
+
+            }
+
+            if (PlayerMoveRight)
+            {
+                StartCoroutine(Slash());
+            }
+            if (Controller.speed == 0)
+            {
+                StartCoroutine(SlashRandom(10));
+            }
+
         }
         else if (medium)
         {
-            StartCoroutine(MediumMove());
+            
+            if (PlayerSlash)
+            {
+
+                StartCoroutine(Block());
+
+            }
+           
+            if (PlayerMoveRight)
+            {
+                StartCoroutine(Slash());
+            }
+            if(Controller.speed == 0)
+            {
+                StartCoroutine(SlashRandom(7));
+            }
+
         }
         else if (hard)
         {
-            StartCoroutine(HardMove());
+            if (PlayerSlash)
+            {
+
+                StartCoroutine(Block());
+
+            }
+
+            if (PlayerMoveRight)
+            {
+                StartCoroutine(Slash());
+            }
+            if (Controller.speed == 0)
+            {
+                StartCoroutine(SlashRandom(4));
+            }
         }
-       
+
+    }
+    public int RandomNum(int i)
+    {
+        return Random.Range(0, i);
+
     }
     IEnumerator DeathSequence()
     {
         anim.Play("Death");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("End");
     }
    
     public static void EasyEnemy()
@@ -86,19 +136,54 @@ public class EnemyController : MonoBehaviour
     }
 
     
+
+    IEnumerator Block()
+    {
+        blockObject.SetActive(false);
+        anim.SetBool("Block", true);
+        yield return new WaitForSeconds(2);
+        blockObject.SetActive(true);
+        anim.SetBool("Block", false);
+    }
+
+    IEnumerator Slash()
+    {
+        
+        anim.SetBool("Slash", true);
+        yield return new WaitForSeconds(2);
+        anim.SetBool("Slash", false);
+    }
+
+    IEnumerator SlashRandom(int s)
+    {
+        anim.SetBool("Slash", false);
+        yield return new WaitForSeconds(s);
+        anim.SetBool("Slash", true);
+        yield return new WaitForSeconds(2);
+        anim.SetBool("Slash", false);
+        yield return new WaitForSeconds(s);
+    }
     IEnumerator EasyMove()
     {
 
+        //anim.SetBool("Slash", true);
+        //yield return new WaitForSeconds(3);
+        //anim.SetBool("Slash", false);
+        //yield return new WaitForSeconds(5);
 
-        anim.SetBool("Block", true);
-        yield return new WaitForSeconds(3);
-        anim.SetBool("Block", false);
-        yield return new WaitForSeconds(1);
-        anim.SetBool("Slash", false);
 
-        anim.SetBool("Slash", true);
-        yield return new WaitForSeconds(3);
-        anim.SetBool("Slash", false);
+        //anim.SetBool("Block", true);
+        //yield return new WaitForSeconds(3);
+        //anim.SetBool("Block", false);
+        //yield return new WaitForSeconds(1);
+       
+
+        //yield return new WaitForSeconds(5);
+        //speed = -3;
+        //anim.SetBool("WalkBack", true);
+        //yield return new WaitForSeconds(5);
+        //speed = 0;
+        //anim.SetBool("WalkBack", false);
         yield return new WaitForSeconds(5);
 
 
