@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerName : MonoBehaviour
 {
     public static string playerName;
+    public static string whoWon;
     TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class PlayerName : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == "End")
         {
-            text.SetText(PlayerPrefs.GetString("PlayerName", "playerName") + " is the winner");
+            text.SetText(whoWon + " is the winner");
         }
     }
 

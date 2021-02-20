@@ -28,6 +28,10 @@ public class Controller : MonoBehaviour
         {
             StartCoroutine(DeathSequence());
         }
+        if(!EnemyController.enemyIsAlive && isAlive)
+        {
+            StartCoroutine(Winner());
+        }
        
 
     }
@@ -99,8 +103,17 @@ public class Controller : MonoBehaviour
     IEnumerator DeathSequence()
     {
         anim.Play("Death");
+        PlayerName.whoWon = "Paladin";
         yield return new WaitForSeconds(3);
+        isAlive = true;
         SceneManager.LoadScene("End");
+    }
+
+    IEnumerator Winner()
+    {
+        yield return new WaitForSeconds(0.1f);
+        anim.Play("PowerUP");
+        yield return new WaitForSeconds(2);
     }
 
 

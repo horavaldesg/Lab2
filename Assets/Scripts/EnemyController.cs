@@ -35,6 +35,10 @@ public class EnemyController : MonoBehaviour
             
             StartCoroutine(DeathSequence());
         }
+        if(!Controller.isAlive && enemyIsAlive)
+        {
+            StartCoroutine(Winner());
+        }
        
         if (easy)
         {
@@ -100,10 +104,19 @@ public class EnemyController : MonoBehaviour
         return Random.Range(0, i);
 
     }
+
+    IEnumerator Winner()
+    {
+        yield return new WaitForSeconds(0.1f);
+        anim.Play("PowerUP");
+        yield return new WaitForSeconds(2);
+    }
     IEnumerator DeathSequence()
     {
+        PlayerName.whoWon = PlayerPrefs.GetString("PlayerName", "playerName");
         anim.Play("Death");
         yield return new WaitForSeconds(3);
+        enemyIsAlive = true;
         SceneManager.LoadScene("End");
     }
    

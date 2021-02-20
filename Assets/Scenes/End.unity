@@ -180,8 +180,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player is the Winner
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b67dfa07a7cd54a3a8e862f85c512ed6, type: 2}
+  m_sharedMaterial: {fileID: -6914813104514301860, guid: b67dfa07a7cd54a3a8e862f85c512ed6,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 343754661}
   - component: {fileID: 343754660}
   m_Layer: 0
-  m_Name: Title
+  m_Name: Title Load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,8 +917,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b67dfa07a7cd54a3a8e862f85c512ed6, type: 2}
+  m_sharedMaterial: {fileID: -6914813104514301860, guid: b67dfa07a7cd54a3a8e862f85c512ed6,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
